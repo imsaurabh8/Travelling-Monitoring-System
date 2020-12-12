@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<head>
+<link rel="stylesheet" href="{% static 'feedback.css' %}">
+<title>
+</title>
+
+</head>
+
+<div class="regform"> <h1>Hospital Details</h1> </div>
+<div class="main">
+
+    <form action="/TMS/hospital/" method="post">{% csrf_token %}
+
+<!--        <h2 class="name">Hospital Name</h2>-->
+<!--        <input class="email" type="text" name="h_name" placeholder="Enter name of hospital you got admitted in">-->
+
+        <div id="name">
+        <h2 class="name">Doctor's Name</h2>
+        <input class="email" type="text" name="name" placeholder="Enter Your Doctor In-charge Name">
+</div>
+
+        <h2 class="name">Room Number</h2>
+        <input class="email" type="number" name="room_no" placeholder="Enter Your Room number">
+
+        <h2 class="name">Type of room Allocated?</h2>
+        <select class="option" name="room_type">
+          <option disabled="disabled" selected="selected">Select</option>
+          <option> Single Bed-room </option>
+          <option> Double Bed-room </option>
+            <option> General Ward </option>
+
+        </select>
+
+        <h2 class="name">Total Bill Amount</h2>
+        <input class="email" type="number" name="bill" placeholder="Enter Your Bill Amount">
+
+
+        <table>
+        <tr>
+            <td><input class="sub" type="submit" name="continue"        value="Submit"></td>
+            <td> <a href="/TMS/feedback" class="sub2">Go To Next Page</a></td>
+        </tr>
+        </table>
+
+<!--      <button type="submit" class="btn btn-success">Submit</button>-->
+
+
+<!--        <a href="/TMS/feedback">Go to feedback page</a>-->
+
+</form>
+
+</div>
+
+         <div class="button-cont" >
+        <form action="/TMS/logout/" method="post" name="logout_view">
+          {% csrf_token %}
+            <input id="log-out" type="submit" name="logout" value="Sign Out">-->
+        </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<head>
+<link rel="stylesheet" href="{% static 'feedback.css' %}">
+<title>
+</title>
+
+</head>
+<div class="regform"> <h1>Feedback Matters..</h1> </div>
+<div class="main">
+
+
+    <form action="/TMS/feedback/" method="post">{% csrf_token %}
+<!--<div id="name">-->
+<!--        <h2 class="name"></h2>-->
+<!--        <input class="firstname" type="text" name="rev1" placeholder="Enter Your Days"><br>-->
+<!--        <label class="firstlabel">After how many days Your covid symptoms went Away?</label>-->
+<!--    </div>-->
+
+<div id="name">
+        <h2 class="name">How are we doing?</h2>
+        <input class="email" type="text" name="rev1" rows="3" >
+</div>
+
+    <h2 class="name">Was Hospital Clean?</h2>
+        <select class="option" name="rev2">
+          <option disabled="disabled" selected="selected">--Choose Option</option>
+          <option> Yes </option>
+          <option> No </option>
+        </select>
+
+        <h2 class="name">How was the Food Quality?</h2>
+        <select class="option" name="rev3">
+          <option disabled="disabled" selected="selected">--Choose Option</option>
+          <option> Excellent </option>
+          <option> Very Good </option>
+          <option> Average </option>
+            <option> Poor </option>
+        </select>
+
+        <h2 class="name">How was Your Travelling Experience?</h2>
+        <textarea class="company" name='rev4' rows="3"></textarea>
+<!--        <input class="company" type="text" name="rev4" rows="3">-->
+
+
+        <h2 class="name">Any suggestion or area which needs improvement?</h2>
+<!--        <input class="company" type="text" name="rev5" rows="3">-->
+        <textarea class="company" name='rev5' rows="3"></textarea>
+
+
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+
+
+
+</form>
+
+</div>
+         <div class="button-cont" >
+        <form action="/TMS/logout/" method="post" name="logout_view">
+          {% csrf_token %}
+            <input id="log-out" type="submit" name="logout" value="Sign Out">-->
+        </form>
+  </div>
+
+
+</body>
+</html>

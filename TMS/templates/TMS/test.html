@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'register.css' %}">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+<div class="regform"> <h1>Covid Results</h1> </div>
+<div class="main">
+
+    <form action="/TMS/test/" method="post">{% csrf_token %}
+
+        <h2 class="name">Did You Get Your Covid Test Result?</h2>
+        <select class="option" name="result">
+          <option disabled="disabled" selected="selected">--Choose Option</option>
+          <option> Yes </option>
+          <option> No </option>
+        </select>
+
+        <h2 class="name">What Was Your Covid Test Result?</h2>
+        <select class="option" name="result2">
+          <option disabled="disabled" selected="selected">--Choose Option</option>
+          <option> Positive </option>
+          <option> Negative </option>
+        </select>
+
+
+        <h2 class="name">Will you Be Quarentined?</h2>
+        <select class="option" name="result3">
+          <option disabled="disabled" selected="selected">--Choose Option</option>
+          <option> Yes </option>
+          <option> No </option>
+        </select>
+
+
+        <table>
+        <tr>
+            <td><input class="sub" type="submit" name="continue"    value="Submit"></td>
+            <td> <a href="/TMS/hospital" class="sub2">Go To Next Page</a></td>
+        </tr>
+        </table>
+
+
+<!--        <button type="submit" >Register and Continue</button>-->
+<!--        <button type="submit" href="/TMS/hospital">Continue to History page</button>-->
+
+
+        </form>
+
+
+    </div>
+
+   <div class="button-cont" >
+        <form action="/TMS/logout/" method="post" name="logout_view">
+          {% csrf_token %}
+            <input id="log-out" type="submit" name="logout" value="Sign Out">-->
+        </form>
+  </div>
+
+
+  </body>
+</html>

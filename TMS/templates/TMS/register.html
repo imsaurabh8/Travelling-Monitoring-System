@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'register.css' %}">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+<div class="regform"> <h1>Registration Form</h1> </div>
+<div class="main">
+
+    <form action="/TMS/" method="post" class="contact-form">{% csrf_token %}
+
+       <h2 class="name">Adhaar Number</h2>
+        <input class="company" type="text" name="adhaar_number">
+
+        <div id="name">
+        <h2 class="name">Name</h2>
+        <input class="firstname" type="text" name="name"><br>
+
+    </div>
+
+        <h2 class="name">Email</h2>
+        <input class="email" type="text" name="email">
+
+
+
+
+
+          <h2 class="name"> Phone</h2>
+
+        <input class="number" type="text" name="phone_no">
+
+
+        <h2 class="name">Gender</h2>
+        <input class="gender" type="text" name="gender">
+
+         <h2 class="name">Age</h2>
+        <input class="age" type="text" name="age">
+
+
+
+
+
+
+        <table>
+        <tr>
+            <td><input class="sub" type="submit" name="continue"        value="Submit"></td>
+            <td> <a href="history/" class="sub2">Go To Next Page</a></td>
+        </tr>
+        </table>
+
+
+<!--            <input class="sub" type="submit" name="continue"        value="Submit">-->
+
+<!--            <a href="history/" id="sub2">Go To History</a>-->
+
+
+
+
+
+<!--         <button type="submit" >Register and Continue</button>-->
+<!--        <button type="submit" href="/TMS/history">Continue to History page</button>-->
+
+      </form>
+
+
+    </div>
+
+   <div class="button-cont" >
+        <form action="/TMS/logout/" method="post" name="logout_view">
+          {% csrf_token %}
+            <input id="log-out" type="submit" name="logout" value="Sign Out">
+        </form>
+  </div>
+
+
+  </body>
+</html>

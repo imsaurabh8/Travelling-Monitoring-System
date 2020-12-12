@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'register.css' %}">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+<div class="regform"> <h1>Travel History</h1> </div>
+<div class="main">
+
+    <form action="/TMS/history/" method="post" name="Travel_history">{% csrf_token %}
+
+        <h2 class="name">Source</h2>
+        <input class="company" type="text" name="source" placeholder="From Where Are You Coming?">
+
+
+        <h2 class="name">Destionation</h2>
+        <input class="company" type="text" name="dest" placeholder="To Where Are You Going??">
+
+        <h2 class="name">Enter Your Mode Of Transportation?</h2>
+        <input class="company" type="text" name="transportation">
+
+        <h2 class="name">Enter Your Date Of Journey?</h2>
+        <input type="date" class="company" name="tv_date" placeholder="Enter Ur date of journey">
+
+
+        <h2 class="name">Enter No. Of Co-Passengers</h2>
+
+        <input class="number" type="text" name="co_pass">
+
+
+        <table>
+        <tr>
+            <td><input class="sub" type="submit" name="continue"        value="Submit"></td>
+            <td> <a href="/TMS/test" class="sub2">Go To Next Page</a></td>
+        </tr>
+        </table>
+
+
+<!--         <button type="submit" >Register and Continue</button>-->
+<!--        <button type="submit" href="/TMS/test">Continue to History page</button>-->
+
+      </form>
+
+
+    </div>
+
+
+
+
+
+  <div class="button-cont" >
+        <form action="/TMS/logout/" method="post" name="logout_view">
+          {% csrf_token %}
+            <input id="log-out" type="submit" name="logout" value="Sign Out">-->
+        </form>
+  </div>
+
+
+
+  </body>
+</html>
